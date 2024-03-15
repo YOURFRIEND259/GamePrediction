@@ -25,7 +25,7 @@ model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 mse = mean_squared_error(y_test, y_pred)
-print("Błąd średniokwadratowy (MSE) modelu:".format(mse))
+print("Błąd średniokwadratowy (MSE) modelu:{:.2f}".format(mse))
 
 new_data = pd.DataFrame({'Launch Price': [9.99],'Tag_encoded': [label_encoder.transform(['Action'])[0]]})
 prediction = model.predict(new_data)
